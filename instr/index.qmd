@@ -1,6 +1,0 @@
----
-title: "Entropy Balances"
-author: "DOFPro group"
----
-
-Intro to Systems and Balances
