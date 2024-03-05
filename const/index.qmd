@@ -1,6 +1,6 @@
 ---
-title: "Entropy Balances"
+title: "Construction Information"
 author: "DOFPro group"
 ---
 
-Intro to Systems and Balances
+This page will eventually contain information on construction techniques as well as information on how to construct a rocket suitable for a Level 1 flight, a Level 2 flight, and some other rockets.

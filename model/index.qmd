@@ -1,6 +1,41 @@
 ---
-title: "Entropy Balances"
+title: "Modeling"
 author: "DOFPro group"
 ---
 
-Intro to Systems and Balances
+Page development in process. It is still pretty rough. This page will eventually contain information on modeling of flight dynamics, modal vibrations, and other aspects of rocketry.
+
+# 1-D models
+* Analytical with constant thrust and constant drag coefficient.
+* Analytical with multiple constant thrusts and constant drag coefficient
+* Runge-Kutta with thrust curve and constant drag coefficient
+* Numerical integration of accelerometer data
+
+There are two reasons for creating models of rocket flight
+
+1. Predict performance of a rocket with a given motor.
+2. Fit data from a flight to determine parameters such as $C_D$ or thrust curve.
+
+We have multiple packages that we'll use for modeling. The general packages are:
+
+* [LibreOffice](https://www.libreoffice.org/) or other spreadsheet
+* [Python](https://www.python.org/)
+  * [NumPy](https://numpy.org/)
+  * [SciPy](https://scipy.org/)
+  * [SageMath](https://www.sagemath.org/)
+
+The rocket-specific packages are:
+
+* [OpenRocket](https://openrocket.info/)
+* [RASAero](https://www.rasaero.com/)
+
+Other packages we'll use:
+
+* [FreeCAD](https://www.freecad.org/)
+* [KiCAD](https://www.kicad.org/)
+
+## Analytical with Constant Thrust and Constant Drag Coefficient
+This is the simplest model that does a good job of describing a rocket flight up to ejection and is useful for processing data to determine total impulse, total burn time, and an average C~D. This model assumes that the motor thrust is constant at the average level for the motor burn time. For example looking up the [Estes C6]() motor on [ThrustCurve.org](http://www.thrustcurve.org/motorsearch.jsp?id=21) shows a total impulse of 8.8 Ns and a total burn time of 1.9 s. The motor would be modeled as generating a constant thrust of 8.8 Ns/1.9 s = 4.63 N for 1.9 s. Notice the listed average thrust is
+4.7 N, which is close to the value we would specify, but not exactly the same. Which is correct? That would depend on what you think is correct.
+
+3 3-D models

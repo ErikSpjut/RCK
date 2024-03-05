@@ -1,0 +1,65 @@
+---
+title: "Barometric Altitude"
+author: "DOFPro group"
+format: html
+---
+
+**Barometric Altitude**
+
+# Standard Atmospheric Model
+
+The standard atmospheric model below 11,000 m is almost the same for both the ISO Standard Atmosphere and the US Standard Atmosphere. The following is based on the US Standard Atmosphere. The atmosphere is modeled assuming a base temperature, $T_0$, at mean sea level (MSL) ($h_0 = 0$) of 288.15 K (15.0°C) and a base pressure, $P_0$, of 101,325 Pa. The temperature is assumed to vary linearly with altitude at a rate of –6.5°C per 1000 m (the *lapse rate*, $L$). The pressure versus altitude is calculated from the simultaneous solution of
+
+$$
+\frac{dP}{dh} = \rho g = M \frac{n}{V} g
+$$
+
+and
+
+$$P = \frac{n}{V} R T$$.
+
+The solution is
+
+$$
+P = P_0\left[\frac{T_0}{T_0+ L(h-h_0)}\right]^{\left(\frac{M g}{L R}\right)}
+$$
+
+or solved for $h$ in terms of $P$
+
+$$
+h = h_0 + \frac{T_0}{L} \left[\left(\frac{P}{P_0}\right)^{-\left(\frac{L R}{M g}\right)} - 1\right]
+$$
+
+The molecular weight of dry air, $M$, is assumed to be 0.0289644 kg/mol. The value of $R$ used in the US Standard Atmosphere is 8.31432 J/(mol⋅K) versus the current [NIST standard](https://physics.nist.gov/cgi-bin/cuu/Value?r) of 8.314462618 J/(mol⋅K). The difference is less than 0.002%, and is insignificant compared to the other uncertainties in the model.
+
+# Corrections for Non-Standard Conditions
+
+The MSL is calculated by most commercial rocket altimeters from the above formula. Obviously, if $T_0$ or $P_0$ differ from the assumed values due to local weather conditions, the calculated MSL altitude can exhibit large errors. To get around the MSL errors, most commercial rocket altimeters calculate AGL altitude by subtracting the calculated MSL altitude at launch from the calculated MSL altitude during flight. This correction can be improved upon.
+
+High-pressure or low-pressure weather conditions can affect the calculated barometric altitude by quite a bit. In addition, the temperature at a given location may vary quite a bit from that predicted by the base temperature and standard lapse rate. Also, the molecular weight of air can vary quite a bit with the absolute humidity.
+
+If the altitude, air temperature and air pressure of the launch pad can be measured or determined, the values can be plugged into the above model and a corrected altitude calculated. Plug in launch altitude as $h_0$, launch pressure as $P_0$, and launch temperature as $T_0$. In addition, if the relative humidity can be measured, the absolute humidity and the resultant molecular weight can be calculated and plugged in for $M$. The molecular weight of water is 0.01801528 kg/mol. These corrections depend on the assumptions of a standard linear lapse rate and a water vapor mole fraction that doesn't vary with altitude.
+
+If flight data are available for temperature and/or relative humidity versus altitude, they can be used to improve the calculations.
+
+## The Antoine Equation for Water
+
+To calculate the absolute humidity from the relative humidity, one needs the vapor pressure of water at the system temperature. Rather than use the steam tables, one can use the Antoine equation. A form of the equation suitable for atmospheric corrections is
+
+$$
+P = \exp\left[16.3872 -\frac{3885.70}{T-42.98}\right]
+$$
+
+where $P$ is in kPa, and $T$ is in kelvin.
+
+# Sample Corrections
+
+Below is the plot of the uncorrected AGL altitude and the AGL altitude corrected for $P_0$, $T_0$, $h_0$, and $H_r$ for the first flight of the DX3 rocket on an F67-9W. In this case the corrections have a very minor effect on the calculated altitude. In other cases they can have a much larger effect.
+
+![Figure \[AltPlot\]: Non-Corrected and Corrected AGL Altitude](images/CorrectedAltitude.png)
+
+To make the magnitude of the corrections more visible, below is a plot of the difference between the uncorrected and corrected AGL altitudes as a function of time.
+
+![Figure \[ErrPlot\]: Difference between Non-Corrected and Corrected AGL Altitude](images/ErrAGLAltitude.png)
+
+The maximum magnitude of the difference is 4 m out of 500 m, or a little less than 1%.

@@ -5,6 +5,5 @@ author: "DOFPro group"
 
 # Introduction
 
-These pages outline the basics of High Power Rocketry as defined in [NFPA 1127](https://www.nfpa.org/codes-and-standards/1/nfpa-1/2/nfpa-1127) and by \[TRA\](<https://www.tripoli.org/>) and \[NAR\](<https://www.nar.org/>).
+High Power Rocketry concerns rockets with a mass of greater than 1500 grams and/or a single motors with more than 160 Ns of impulse or a cluster of motors with more than 320 Ns of impulse. High Power Rocketry is more thoroughly defined in [NFPA 1127](https://www.nfpa.org/codes-and-standards/1/nfpa-1/2/nfpa-1127) and by [TRA](<https://www.tripoli.org/>) and [NAR](<https://www.nar.org/>). This website contains information on the safety regulations, construction guidelines and hints, modeling of rocket flight, instrumentation, avionics, and analysis of flight data. In addition, there is an archive of flight data, and archives of information from previous rocket courses.
 
-**More needs to be written**

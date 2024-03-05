@@ -1,6 +1,6 @@
 ---
-title: "Entropy Balances"
+title: "Data Archive"
 author: "DOFPro group"
 ---
 
-Intro to Systems and Balances
+A great number of models, tutorials, and experimental data sets have been gathered in E80, The Rocket Version, and in E178. Much of that information will be reproduced here.

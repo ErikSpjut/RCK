@@ -1,6 +1,6 @@
 ---
-title: "Entropy Balances"
+title: "Flight Data Archive"
 author: "DOFPro group"
 ---
 
-Intro to Systems and Balances
+This page will eventually contain an archive of actual flight data with instructions on how to read and process them.

@@ -1,6 +1,8 @@
 ---
-title: "Entropy Balances"
+title: "Instrumentation and Data Analysis"
 author: "DOFPro group"
 ---
 
-Intro to Systems and Balances
+This page will eventually contain information about avionics and other instruments for collecting data aboard your rockets during flight, along with information on how to analyze the data and compare it with your flight models.
+
+As a sample, here is a link to [information about barometric altimeters](baroalt.qmd).

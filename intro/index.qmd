@@ -1,6 +1,12 @@
 ---
-title: "Entropy Balances"
+title: "Introduction the High Power Rocketry"
 author: "DOFPro group"
 ---
 
-Intro to Systems and Balances
+# Introduction
+
+Eventually, this page will provie more background on high power rocketry.
+
+These pages outline the basics of High Power Rocketry as defined in [NFPA 1127](https://www.nfpa.org/codes-and-standards/1/nfpa-1/2/nfpa-1127) and by \[TRA\](<https://www.tripoli.org/>) and \[NAR\](<https://www.nar.org/>).
+
+The [Certification](/intro/cert.qmd) process is explainied on the linked page.

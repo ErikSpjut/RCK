@@ -1,6 +1,6 @@
 ---
-title: "Entropy Balances"
+title: "Basic Safety Information"
 author: "DOFPro group"
 ---
 
-Intro to Systems and Balances
+This page will eventually introduce the basics of safe guilding and flying of high power rockets.
