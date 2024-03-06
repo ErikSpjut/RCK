@@ -1,35 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ErikSpjut.github.io/RCK/instr/index.html</loc>
-    <lastmod>2024-02-22T00:24:21.310Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ErikSpjut.github.io/RCK/const/index.html</loc>
-    <lastmod>2024-02-22T00:24:21.310Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ErikSpjut.github.io/RCK/index.html</loc>
-    <lastmod>2024-02-22T00:24:21.310Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ErikSpjut.github.io/RCK/archive/index.html</loc>
-    <lastmod>2024-02-22T00:24:21.309Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ErikSpjut.github.io/RCK/intro/index.html</loc>
-    <lastmod>2024-02-22T00:24:21.311Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ErikSpjut.github.io/RCK/fltdata/index.html</loc>
-    <lastmod>2024-02-22T00:24:21.310Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ErikSpjut.github.io/RCK/safety/index.html</loc>
-    <lastmod>2024-02-22T00:24:21.311Z</lastmod>
+    <loc>https://ErikSpjut.github.io/RCK/instr/baroalt.html</loc>
+    <lastmod>2024-03-06T02:03:37.162Z</lastmod>
   </url>
   <url>
     <loc>https://ErikSpjut.github.io/RCK/model/index.html</loc>
-    <lastmod>2024-02-22T00:24:21.311Z</lastmod>
+    <lastmod>2024-03-06T02:03:37.164Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ErikSpjut.github.io/RCK/safety/index.html</loc>
+    <lastmod>2024-03-06T02:03:37.164Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ErikSpjut.github.io/RCK/fltdata/index.html</loc>
+    <lastmod>2024-03-06T02:03:37.162Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ErikSpjut.github.io/RCK/intro/index.html</loc>
+    <lastmod>2024-03-06T02:03:37.163Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ErikSpjut.github.io/RCK/intro/cert.html</loc>
+    <lastmod>2024-03-06T02:03:37.163Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ErikSpjut.github.io/RCK/archive/index.html</loc>
+    <lastmod>2024-03-06T02:03:37.161Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ErikSpjut.github.io/RCK/index.html</loc>
+    <lastmod>2024-03-06T02:03:37.162Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ErikSpjut.github.io/RCK/const/index.html</loc>
+    <lastmod>2024-03-06T02:03:37.161Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ErikSpjut.github.io/RCK/instr/index.html</loc>
+    <lastmod>2024-03-06T02:03:37.163Z</lastmod>
   </url>
 </urlset>

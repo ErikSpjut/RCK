@@ -8,7 +8,7 @@
 
 <meta name="author" content="DOFPro group">
 
-<title>High Power Rocketry - Basic Safety Information</title>
+<title>High Power Rocketry - Barometric Altitude</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -133,14 +162,25 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#standard-atmospheric-model" id="toc-standard-atmospheric-model" class="nav-link active" data-scroll-target="#standard-atmospheric-model">Standard Atmospheric Model</a></li>
+  <li><a href="#corrections-for-non-standard-conditions" id="toc-corrections-for-non-standard-conditions" class="nav-link" data-scroll-target="#corrections-for-non-standard-conditions">Corrections for Non-Standard Conditions</a>
+  <ul class="collapse">
+  <li><a href="#the-antoine-equation-for-water" id="toc-the-antoine-equation-for-water" class="nav-link" data-scroll-target="#the-antoine-equation-for-water">The Antoine Equation for Water</a></li>
+  </ul></li>
+  <li><a href="#sample-corrections" id="toc-sample-corrections" class="nav-link" data-scroll-target="#sample-corrections">Sample Corrections</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Basic Safety Information</h1>
+<h1 class="title">Barometric Altitude</h1>
 </div>
 
 
@@ -163,9 +203,60 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This page will eventually introduce the basics of safe guilding and flying of high power rockets.</p>
+<p><strong>Barometric Altitude</strong></p>
+<section id="standard-atmospheric-model" class="level1">
+<h1>Standard Atmospheric Model</h1>
+<p>The standard atmospheric model below 11,000 m is almost the same for both the ISO Standard Atmosphere and the US Standard Atmosphere. The following is based on the US Standard Atmosphere. The atmosphere is modeled assuming a base temperature, <span class="math inline">\(T_0\)</span>, at mean sea level (MSL) (<span class="math inline">\(h_0 = 0\)</span>) of 288.15 K (15.0°C) and a base pressure, <span class="math inline">\(P_0\)</span>, of 101,325 Pa. The temperature is assumed to vary linearly with altitude at a rate of –6.5°C per 1000 m (the <em>lapse rate</em>, <span class="math inline">\(L\)</span>). The pressure versus altitude is calculated from the simultaneous solution of</p>
+<p><span class="math display">\[
+\frac{dP}{dh} = \rho g = M \frac{n}{V} g
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[P = \frac{n}{V} R T\]</span>.</p>
+<p>The solution is</p>
+<p><span class="math display">\[
+P = P_0\left[\frac{T_0}{T_0+ L(h-h_0)}\right]^{\left(\frac{M g}{L R}\right)}
+\]</span></p>
+<p>or solved for <span class="math inline">\(h\)</span> in terms of <span class="math inline">\(P\)</span></p>
+<p><span class="math display">\[
+h = h_0 + \frac{T_0}{L} \left[\left(\frac{P}{P_0}\right)^{-\left(\frac{L R}{M g}\right)} - 1\right]
+\]</span></p>
+<p>The molecular weight of dry air, <span class="math inline">\(M\)</span>, is assumed to be 0.0289644 kg/mol. The value of <span class="math inline">\(R\)</span> used in the US Standard Atmosphere is 8.31432 J/(mol⋅K) versus the current <a href="https://physics.nist.gov/cgi-bin/cuu/Value?r">NIST standard</a> of 8.314462618 J/(mol⋅K). The difference is less than 0.002%, and is insignificant compared to the other uncertainties in the model.</p>
+</section>
+<section id="corrections-for-non-standard-conditions" class="level1">
+<h1>Corrections for Non-Standard Conditions</h1>
+<p>The MSL is calculated by most commercial rocket altimeters from the above formula. Obviously, if <span class="math inline">\(T_0\)</span> or <span class="math inline">\(P_0\)</span> differ from the assumed values due to local weather conditions, the calculated MSL altitude can exhibit large errors. To get around the MSL errors, most commercial rocket altimeters calculate AGL altitude by subtracting the calculated MSL altitude at launch from the calculated MSL altitude during flight. This correction can be improved upon.</p>
+<p>High-pressure or low-pressure weather conditions can affect the calculated barometric altitude by quite a bit. In addition, the temperature at a given location may vary quite a bit from that predicted by the base temperature and standard lapse rate. Also, the molecular weight of air can vary quite a bit with the absolute humidity.</p>
+<p>If the altitude, air temperature and air pressure of the launch pad can be measured or determined, the values can be plugged into the above model and a corrected altitude calculated. Plug in launch altitude as <span class="math inline">\(h_0\)</span>, launch pressure as <span class="math inline">\(P_0\)</span>, and launch temperature as <span class="math inline">\(T_0\)</span>. In addition, if the relative humidity can be measured, the absolute humidity and the resultant molecular weight can be calculated and plugged in for <span class="math inline">\(M\)</span>. The molecular weight of water is 0.01801528 kg/mol. These corrections depend on the assumptions of a standard linear lapse rate and a water vapor mole fraction that doesn’t vary with altitude.</p>
+<p>If flight data are available for temperature and/or relative humidity versus altitude, they can be used to improve the calculations.</p>
+<section id="the-antoine-equation-for-water" class="level2">
+<h2 class="anchored" data-anchor-id="the-antoine-equation-for-water">The Antoine Equation for Water</h2>
+<p>To calculate the absolute humidity from the relative humidity, one needs the vapor pressure of water at the system temperature. Rather than use the steam tables, one can use the Antoine equation. A form of the equation suitable for atmospheric corrections is</p>
+<p><span class="math display">\[
+P = \exp\left[16.3872 -\frac{3885.70}{T-42.98}\right]
+\]</span></p>
+<p>where <span class="math inline">\(P\)</span> is in kPa, and <span class="math inline">\(T\)</span> is in kelvin.</p>
+</section>
+</section>
+<section id="sample-corrections" class="level1">
+<h1>Sample Corrections</h1>
+<p>Below is the plot of the uncorrected AGL altitude and the AGL altitude corrected for <span class="math inline">\(P_0\)</span>, <span class="math inline">\(T_0\)</span>, <span class="math inline">\(h_0\)</span>, and <span class="math inline">\(H_r\)</span> for the first flight of the DX3 rocket on an F67-9W. In this case the corrections have a very minor effect on the calculated altitude. In other cases they can have a much larger effect.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CorrectedAltitude.png" class="img-fluid figure-img"></p>
+<figcaption>Figure [AltPlot]: Non-Corrected and Corrected AGL Altitude</figcaption>
+</figure>
+</div>
+<p>To make the magnitude of the corrections more visible, below is a plot of the difference between the uncorrected and corrected AGL altitudes as a function of time.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ErrAGLAltitude.png" class="img-fluid figure-img"></p>
+<figcaption>Figure [ErrPlot]: Difference between Non-Corrected and Corrected AGL Altitude</figcaption>
+</figure>
+</div>
+<p>The maximum magnitude of the difference is 4 m out of 500 m, or a little less than 1%.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
